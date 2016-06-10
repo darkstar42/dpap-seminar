@@ -2,7 +2,7 @@ package de.fau.cs.dpap.layer.impl;
 
 import de.fau.cs.dpap.layer.BusinessLayer;
 import de.fau.cs.dpap.layer.PresentationLayer;
-import de.fau.cs.dpap.layer.Temperature;
+import de.fau.cs.dpap.Temperature;
 
 import java.text.SimpleDateFormat;
 import java.util.List;

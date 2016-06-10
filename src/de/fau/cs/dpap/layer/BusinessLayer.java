@@ -1,5 +1,7 @@
 package de.fau.cs.dpap.layer;
 
+import de.fau.cs.dpap.Temperature;
+
 import java.util.Date;
 import java.util.List;
 

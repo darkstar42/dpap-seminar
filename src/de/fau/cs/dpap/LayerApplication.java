@@ -1,5 +1,8 @@
-package de.fau.cs.dpap.layer;
+package de.fau.cs.dpap;
 
+import de.fau.cs.dpap.layer.BusinessLayer;
+import de.fau.cs.dpap.layer.DataLayer;
+import de.fau.cs.dpap.layer.PresentationLayer;
 import de.fau.cs.dpap.layer.impl.BusinessLayerImpl;
 import de.fau.cs.dpap.layer.impl.ConsolePresentationLayerImpl;
 import de.fau.cs.dpap.layer.impl.TempDataLayerImpl;

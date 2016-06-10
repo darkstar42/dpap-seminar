@@ -1,4 +1,4 @@
-package de.fau.cs.dpap.layer;
+package de.fau.cs.dpap;
 
 import java.util.Date;
 
