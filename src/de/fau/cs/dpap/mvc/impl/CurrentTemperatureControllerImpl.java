@@ -1,29 +1,10 @@
 package de.fau.cs.dpap.mvc.impl;
 
-import de.fau.cs.dpap.mvc.Controller;
-import de.fau.cs.dpap.mvc.Model;
-import de.fau.cs.dpap.mvc.View;
+import java.awt.event.ActionEvent;
 
-public class CurrentTemperatureControllerImpl implements Controller {
-    private Model model;
-    private View view;
-
+public class CurrentTemperatureControllerImpl extends AbstractTemperatureControllerImpl {
     @Override
-    public void initialize(Model model, View view) {
-        this.model = model;
-        this.view = view;
-
-        view.onButtonClick(e -> handleClickEvent());
-        model.attach(this);
-    }
-
-    @Override
-    public void handleClickEvent() {
-        model.measureTemperature();
-    }
-
-    @Override
-    public void update() {
-
+    public void handleEvent(ActionEvent event) {
+        getModel().measureTemperature();
     }
 }

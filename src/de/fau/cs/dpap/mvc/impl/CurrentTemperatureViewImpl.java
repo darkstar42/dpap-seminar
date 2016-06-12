@@ -5,12 +5,8 @@ import de.fau.cs.dpap.mvc.Model;
 import de.fau.cs.dpap.mvc.View;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
 
-public class CurrentTemperatureViewImpl extends JFrame implements View {
-    private Model model;
-    private Controller controller;
-
+public class CurrentTemperatureViewImpl extends AbstractTemperatureViewImpl {
     private JTextField field;
     private JButton button;
 
@@ -20,20 +16,14 @@ public class CurrentTemperatureViewImpl extends JFrame implements View {
 
     @Override
     public void initialize(Model model, Controller controller) {
-        this.model = model;
-        this.controller = controller;
+        super.initialize(model, controller);
 
-        model.attach(this);
-    }
-
-    @Override
-    public void onButtonClick(ActionListener listener) {
-        button.addActionListener(listener);
+        registerEventHandler(button, controller);
     }
 
     @Override
     public void update() {
-        String output = String.format("%.2f °C", model.getCurrentTemperature().getValue());
+        String output = String.format("%.2f °C", getModel().getCurrentTemperature().getValue());
         field.setText(output);
     }
 

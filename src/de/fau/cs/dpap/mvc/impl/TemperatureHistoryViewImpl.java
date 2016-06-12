@@ -3,16 +3,11 @@ package de.fau.cs.dpap.mvc.impl;
 import de.fau.cs.dpap.Temperature;
 import de.fau.cs.dpap.mvc.Controller;
 import de.fau.cs.dpap.mvc.Model;
-import de.fau.cs.dpap.mvc.View;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
 import java.util.List;
 
-public class TemperatureHistoryViewImpl extends JFrame implements View {
-    private Model model;
-    private Controller controller;
-
+public class TemperatureHistoryViewImpl extends AbstractTemperatureViewImpl {
     private JTextField field;
     private JButton button;
 
@@ -22,20 +17,14 @@ public class TemperatureHistoryViewImpl extends JFrame implements View {
 
     @Override
     public void initialize(Model model, Controller controller) {
-        this.model = model;
-        this.controller = controller;
+        super.initialize(model, controller);
 
-        model.attach(this);
-    }
-
-    @Override
-    public void onButtonClick(ActionListener listener) {
-        button.addActionListener(listener);
+        registerEventHandler(button, controller);
     }
 
     @Override
     public void update() {
-        List<Temperature> temperatures = model.getTemperatureHistory();
+        List<Temperature> temperatures = getModel().getTemperatureHistory();
         String output = "";
 
         for (Temperature temperature : temperatures) {
