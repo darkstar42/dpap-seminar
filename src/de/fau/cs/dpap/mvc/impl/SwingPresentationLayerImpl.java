@@ -23,13 +23,13 @@ public class SwingPresentationLayerImpl implements PresentationLayer {
         View currentView = new CurrentTemperatureViewImpl();
         Controller currentController = new CurrentTemperatureControllerImpl();
 
-        currentView.initialize(model);
+        currentView.initialize(model, currentController);
         currentController.initialize(model, currentView);
 
         View historyView = new TemperatureHistoryViewImpl();
         Controller historyController = new TemperatureHistoryControllerImpl();
 
-        historyView.initialize(model);
+        historyView.initialize(model, historyController);
         historyController.initialize(model, historyView);
     }
 }

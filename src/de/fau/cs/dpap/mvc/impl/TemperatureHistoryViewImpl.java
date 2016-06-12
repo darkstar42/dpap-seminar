@@ -1,6 +1,7 @@
 package de.fau.cs.dpap.mvc.impl;
 
 import de.fau.cs.dpap.Temperature;
+import de.fau.cs.dpap.mvc.Controller;
 import de.fau.cs.dpap.mvc.Model;
 import de.fau.cs.dpap.mvc.View;
 
@@ -10,17 +11,19 @@ import java.util.List;
 
 public class TemperatureHistoryViewImpl extends JFrame implements View {
     private Model model;
+    private Controller controller;
 
-    JTextField field;
-    JButton button;
+    private JTextField field;
+    private JButton button;
 
     public TemperatureHistoryViewImpl() {
         initializeWindow();
     }
 
     @Override
-    public void initialize(Model model) {
+    public void initialize(Model model, Controller controller) {
         this.model = model;
+        this.controller = controller;
 
         model.attach(this);
     }
